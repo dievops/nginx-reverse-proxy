@@ -1,0 +1,34 @@
+##########################
+
+site.conf
+
+upstream test {
+  server        test:3000;
+}
+
+server {
+  listen        80;
+  server_name   test.example.com;
+
+  location / {
+    proxy_pass  http://test:3000;
+  }
+}
+
+##########################
+
+Docker-compose
+
+
+version: '3'
+
+services:
+  reverse:
+    container_name: reverse
+    hostname: reverse
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - /home/ubuntu/reverse-nginx/config:/etc/nginx
+
