@@ -1,4 +1,5 @@
 ##########################
+inside conf.d, create two folders: sites-available and sites-enabled. Navigate into sites-available and create conf files like:
 
 site.conf
 
@@ -14,6 +15,14 @@ server {
     proxy_pass  http://test:3000;
   }
 }
+
+Create a symlink:
+
+ln -s ../sites-available/* /sites-enabled
+
+Change nginx.conf for include all files in conf.d:
+
+include /etc/nginx/conf.d/*.conf;
 
 ##########################
 
