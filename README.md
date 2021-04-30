@@ -6,6 +6,7 @@
 
 2- Create a file with .conf extension like awesome-reverse.conf:  
 
+<code>
 server  {
 listen 0.0.0.0:80 default_server;
 error_log  /dev/stderr debug;
@@ -23,6 +24,7 @@ location /status {
 return 200 'im working dude';
 }
 }
+</code>
 
 3- Create a docker-compose.yaml file.  
 
