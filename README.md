@@ -6,7 +6,6 @@
 
 2- Create a file with .conf extension like awesome-reverse.conf:  
 
-    <code>
     server  {
     listen 0.0.0.0:80 default_server;
     error_log  /dev/stderr debug;
@@ -24,20 +23,19 @@
     return 200 'im working dude';
     }
     }
-    </code>
 
 3- Create a docker-compose.yaml file.  
 
-services:
-  reverse:
-    container_name: reverse
-    hostname: reverse
-    restart: always
-    image: nginx
-    ports:
-      - 80:80
-    volumes:
-      - $PWD/awesome-reverse.conf:/etc/nginx/conf.d/awesome-reverse.conf #Here you should map your file created on step number 3 with nginx using a volume statement.
+    services:
+      reverse:
+        container_name: reverse
+        hostname: reverse
+        restart: always
+        image: nginx
+        ports:
+          - 80:80
+        volumes:
+          - $PWD/awesome-reverse.conf:/etc/nginx/conf.d/awesome-reverse.conf #Here you should map your file created on step number 3 with nginx using a volume statement.
 
 
 ### YOUR SUPER REVERSE PROXY. 
@@ -56,6 +54,6 @@ docker-compose logs -f.
 
 ### Sample folder structure:  
 
-reverse-nginx-proxy/
-├── awesome-reverse.conf
-└── docker-compose.yaml
+    reverse-nginx-proxy/
+    ├── awesome-reverse.conf
+    └── docker-compose.yaml
