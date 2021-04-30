@@ -1,10 +1,10 @@
-# Simple steps for a simple nginx reverse proxy.
+# Simple steps for a simple nginx reverse proxy.  
 
-1- Install docker and docker-compose.
-    - https://get.docker.com
-    - https://docs.docker.com/compose/install/
+1- Install docker and docker-compose.  
+    - https://get.docker.com. 
+    - https://docs.docker.com/compose/install/. 
 
-2- Create a file with .conf extension like awesome-reverse.conf:
+2- Create a file with .conf extension like awesome-reverse.conf:  
 
 server  {
 listen 0.0.0.0:80 default_server;
@@ -24,7 +24,7 @@ return 200 'im working dude';
 }
 }
 
-3- Create a docker-compose.yaml file.
+3- Create a docker-compose.yaml file.  
 
 services:
   reverse:
@@ -38,21 +38,21 @@ services:
       - $PWD/awesome-reverse.conf:/etc/nginx/conf.d/awesome-reverse.conf #Here you should map your file created on step number 3 with nginx using a volume statement.
 
 
-### YOUR SUPER REVERSE PROXY
+### YOUR SUPER REVERSE PROXY. 
 
-4- Start your reverse proxy and check error:
+4- Start your reverse proxy and check error:  
 
 docker-compose up
 
 5- Once you check errors and everything is going fine, start it detached and forever with:
 
-docker-compose up -d
+docker-compose up -d. 
 
-6- logs with.
+6- logs with.  
 
-docker-compose logs -f
+docker-compose logs -f. 
 
-### Sample folder:
+### Sample folder structure:  
 
 reverse-nginx-proxy/
 ├── awesome-reverse.conf
