@@ -38,9 +38,6 @@
         volumes:
           - $PWD/awesome-reverse.conf:/etc/nginx/conf.d/awesome-reverse.conf #Here you should map your file created on step number 3 with nginx using a volume statement.
 
-
-### YOUR SUPER REVERSE PROXY. 
-
 4- Start your reverse proxy and check error:  
 
 docker-compose up
