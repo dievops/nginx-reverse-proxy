@@ -1,8 +1,9 @@
 # Simple steps for a simple nginx reverse proxy.  
 
 1- Install docker and docker-compose.  
-    - https://get.docker.com. 
-    - https://docs.docker.com/compose/install/. 
+
+    https://get.docker.com. 
+    https://docs.docker.com/compose/install/. 
 
 2- Create a file with .conf extension like awesome-reverse.conf:  
 
