@@ -6,25 +6,25 @@
 
 2- Create a file with .conf extension like awesome-reverse.conf:  
 
-<code>
-server  {
-listen 0.0.0.0:80 default_server;
-error_log  /dev/stderr debug;
-access_log  /dev/stdout main;
-rewrite_log on;
-client_header_timeout  30;
-client_body_timeout  30;
-charset  UTF-8;
+    <code>
+    server  {
+    listen 0.0.0.0:80 default_server;
+    error_log  /dev/stderr debug;
+    access_log  /dev/stdout main;
+    rewrite_log on;
+    client_header_timeout  30;
+    client_body_timeout  30;
+    charset  UTF-8;
 
-location / {
-proxy_pass https://proxy-my-request-to; #this is where your requests will arrive
-}
+    location / {
+    proxy_pass https://proxy-my-request-to; #this is where your requests will arrive
+    }
 
-location /status {
-return 200 'im working dude';
-}
-}
-</code>
+    location /status {
+    return 200 'im working dude';
+    }
+    }
+    </code>
 
 3- Create a docker-compose.yaml file.  
 
