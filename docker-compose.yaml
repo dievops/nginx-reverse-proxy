@@ -1,0 +1,10 @@
+services:
+  reverse:
+    container_name: reverse
+    hostname: reverse
+    restart: always
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - $PWD/awesome-reverse.conf:/etc/nginx/conf.d/awesome-reverse.conf
